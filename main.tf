@@ -14,14 +14,14 @@ resource "aws_vpc" "vpc_test" {
 #output "aws_internet_gateway_ip" {
 #  value=aws_internet_gateway.gw.id
 #}
-resource "aws_route_table" "route_table1" {
-  vpc_id = aws_vpc.vpc_test.id
-
-  route {
-    cidr_block = "0.0.0.0/0"
-    gateway_id = aws_internet_gateway.gw.id
-  }
-}
+#resource "aws_route_table" "route_table1" {
+#  vpc_id = aws_vpc.vpc_test.id
+#
+#  route {
+#    cidr_block = "0.0.0.0/0"
+#    gateway_id = aws_internet_gateway.gw.id
+#  }
+#}
 
 resource "aws_subnet" "subnet1" {
   vpc_id            = aws_vpc.vpc_test.id
@@ -31,15 +31,15 @@ resource "aws_subnet" "subnet1" {
     Name = "main"
   }
 }
-resource "aws_route_table_association" "route-subnet1" {
-  subnet_id      = aws_subnet.subnet1.id
-  route_table_id = aws_route_table.route_table1.id
-}
+#resource "aws_route_table_association" "route-subnet1" {
+#  subnet_id      = aws_subnet.subnet1.id
+#  route_table_id = aws_route_table.route_table1.id
+#}
 
-resource "aws_internet_gateway_attachment" "igw_vpc_test" {
-  internet_gateway_id = aws_internet_gateway.gw.id
-  vpc_id              = aws_vpc.vpc_test.id
-}
+#resource "aws_internet_gateway_attachment" "igw_vpc_test" {
+#  internet_gateway_id = aws_internet_gateway.gw.id
+#  vpc_id              = aws_vpc.vpc_test.id
+#}
 
 resource "aws_subnet" "private-1a" {
   vpc_id            = aws_vpc.vpc_test.id
