@@ -3,13 +3,13 @@ resource "aws_vpc" "vpc_test" {
   enable_dns_hostnames = true
 }
 
-resource "aws_internet_gateway" "gw" {
-  vpc_id = aws_vpc.vpc_test.id
-
-  tags = {
-    Name = "main"
-  }
-}
+#resource "aws_internet_gateway" "gw" {
+#  vpc_id = aws_vpc.vpc_test.id
+#
+#  tags = {
+#    Name = "main"
+#  }
+#}
 
 #output "aws_internet_gateway_ip" {
 #  value=aws_internet_gateway.gw.id
