@@ -6,14 +6,21 @@ terraform {
       name = "cloud_infra"
     }
   }
-}
 
-  required_providers {
+   required_providers {
     aws = {
       source  = "hashicorp/aws"
       version = "~> 5.0"
     }
   }
+}
+
+#  required_providers {
+#    aws = {
+#      source  = "hashicorp/aws"
+#      version = "~> 5.0"
+#    }
+#  }
 
 
 # Configure the AWS Provider
